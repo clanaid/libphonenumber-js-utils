@@ -18,10 +18,10 @@ script:
   - bash ./scripts/execute.sh
   - npm test
 after_script:
-  - mkdir public
+  - mkdir /home/public_dir
   - rm -rf node_modules
-  - cp -R . ./public
-  - cd ./public
+  - cp -r ./ /home/public_dir
+  - cd /home/public_dir
   - git init
   - git add .
   - git commit -m "update package"

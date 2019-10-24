@@ -20,7 +20,7 @@ script:
 after_script:
   - mkdir public
   - rm -rf node_modules
-  - cp * ./public
+  - cp -R . ./public
   - cd ./public
   - git init
   - git add .

@@ -6,8 +6,9 @@ fi
 if [ ! -f ./closure-compiler/target/closure-compiler-1.0-SNAPSHOT.jar ]; then
     rm -rf closure-compiler
     git clone https://github.com/google/closure-compiler.git
+    npm install -g @bazel/bazelisk
     cd closure-compiler
-    yarn build
+    yarn build:fast
     cd ..
 fi
 

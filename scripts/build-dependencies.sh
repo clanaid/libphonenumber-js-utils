@@ -1,13 +1,13 @@
 if [ ! -d ./closure-library/.git ]; then
     rm -rf closure-library
-    git clone --branch v20180910 https://github.com/google/closure-library/
+    git clone --branch v20210406 https://github.com/google/closure-library/
 fi
 
 if [ ! -f ./closure-compiler/target/closure-compiler-1.0-SNAPSHOT.jar ]; then
     rm -rf closure-compiler
-    git clone --branch v20181210 https://github.com/google/closure-compiler.git
+    git clone --branch v20210406 https://github.com/google/closure-compiler.git
     cd closure-compiler
-    mvn -DskipTests -pl externs/pom.xml,pom-main.xml,pom-main-shaded.xml
+    yarn build
     cd ..
 fi
 
